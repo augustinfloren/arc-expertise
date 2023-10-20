@@ -1,0 +1,342 @@
+html, body {
+    margin: 0;
+  }
+
+@font-face {
+    font-family: "cairo", sans-serif;
+    src: url("/fonts/Cairo-Regular.ttf") format("truetype"),
+         url("/fonts/Cairo-Regular.otf") format("opentype")
+         url("/fonts/Cairo-Regular.woff2") format("woff2"),
+         url("/fonts/Cairo-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "cairob";
+    src: url("fonts/Cairo-SemiBold.ttf") format("truetype"),
+         url("fonts/Cairo-SemiBold.woff2") format("woff2"),
+         url("fonts/Cairo-SemiBold.woff") format("woff");
+}
+
+@keyframes slidein {
+    from {
+        margin-left: -1000px;
+        color: rgba(30, 56, 112, 0);
+    }
+    50% {
+        color: rgba(30, 56, 112, 0.1);
+    }
+    to {
+        margin-left: 0px;
+        color: rgba(30, 56, 112, 1);
+    }
+}
+
+body{
+    font-family: "cairo", sans-serif;
+}
+
+
+/* HEADER */
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    top: 0px;
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(153deg, rgba(108,152,255,0.1) 10%, rgba(27,32,129,0) 47%);
+}
+
+#header-on-scroll{
+    z-index: 5;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+.logo-small{
+    width: 150px;
+    padding-top: 18px;
+}
+
+.logo{
+    margin-top: 143px;
+    width: 223px;
+}
+
+
+/*  MAIN */
+
+#main{
+    background: linear-gradient(153deg, rgba(0,36,100,0.3) 0%, rgba(0,36,100, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+h1{
+    font-family: "cairo";
+    font-size: 30px;
+    font-weight: 400;
+    color: #1E3870;
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+#presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+    gap: 30px;
+    width: 100%;
+    height: 450px;
+    background: rgba(0, 36, 89, 0.8);
+    background-blend-mode: multiply;
+    background-image: linear-gradient(-180deg, rgba(0, 36, 89, 0.3) 24%, rgba(1, 36, 87, 0.5) 100%), url("https://i.ibb.co/CKj8sn0/building.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.title{
+    font-family: "cairo";
+    font-weight: 400;
+    font-size: 25px;
+    color: white;
+    line-height: 30px;
+    width: 700px;
+}
+
+#presentation section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.article {
+    background: linear-gradient(180deg, rgba(0,17,46,1) 0%, rgba(0,36,100,0.8) 100%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.article-ul, .article p {
+    border-left: 2px solid #1F3973;
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: normal;
+    color: white;
+    list-style-type: none;
+}
+
+.article .title {
+    width: 450px;
+}
+
+.article section{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    padding: 90px 50px 50px 50px;
+}
+
+.article .article-ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.article p {
+    border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.article-white {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(30,56,112,0.3562558812587535) 100%);
+}
+
+.article-white p {
+    color: #1E3870;
+    border-left: 2px solid #1F3973;
+}
+
+.corner{
+    display: inline;
+    position: absolute;
+    height : 0;
+    width : 0;
+    border-top : 150px solid rgba(255, 255, 255, 0.1);
+    border-right : 150px solid transparent;
+}
+
+.article-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+#end-text {
+    text-align: center;
+    font-weight: 400;
+    font-size: 25px;
+    color: #1E3870;
+    line-height: 30px;
+    max-width: 630px;
+    min-width: 300px;
+    margin: 100px 100px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    color: #1E3870;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#portrait {
+    width: 270px;
+}
+
+#footer-infos h2 {
+    padding: 0;
+    margin: 0;
+}
+
+#footer-infos ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #1E3870;
+    height: 60px;
+    flex-basis: 100%;
+    padding: 10px;
+    margin-bottom: -10px;
+}
+
+@media only screen and (max-width: 950px) {
+
+    /* HEADER */
+
+    #header-on-scroll{
+        height: 60px;
+    }
+
+    .logo-small{
+        width: 100px;
+        padding-top: 10px;
+    }
+
+    .logo{
+        margin-top: 50px;
+        width: 150px;
+    }
+    header{
+        height: 280px;
+    }
+
+    /* MAIN */
+
+    h1{
+        font-size: 20px;
+    }
+
+    #presentation {
+        height: 650px;
+    }
+
+    #presentation h2 {
+        width: 450px;
+    }
+    .article{
+        width: 454px;
+    }
+    .article .title{
+        margin-top: 20px;
+        font-size: 20px;
+        width: 360px;
+    }
+    .article section {
+        width: 350px;
+        padding: 30px 50px 50px 50px;
+    }
+    #end-text{
+        font-size: 20px;
+        margin: 50px 50px;
+    }
+
+    /* FOOTER */
+    
+    #footer{
+        gap: 10px;
+    }
+    #portrait{
+        width: 150px;
+        margin-left: 0px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+
+    /* MAIN */
+    
+    #presentation {
+        height: 880px;
+    }
+    
+    .title {
+        font-size: 20px;
+    }
+
+    #presentation .title {
+        padding-left: 30px;
+        width: 320px;
+    }
+
+    #presentation section {
+        padding: 0px 50px;
+    }
+
+    .article {
+        width: 330px;
+    }
+    
+    .article section {
+        padding: 30px 10px;
+        width: 300px;
+    }
+
+    .article .title {
+        width: 100%;
+        padding: 0px 30px;
+    }
+
+
+}
